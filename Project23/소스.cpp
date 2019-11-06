@@ -2,23 +2,27 @@
 
 int main(void)
 {
-	char input1;
-	float input2, C, F;
-	printf("문자 하나와(F,f,C,c)중 하나와 실수를 입력하세요: ");
-	scanf_s("%c %f", &input1, &input2);
-
-	if (input1 == 'F' || input1 == 'f')
+	float a, b;
+	int c;
+	printf("두 실수 입력: ");
+	scanf_s("%f%f", &a, &b);
+	printf("연산종류 번호선택 1<+>, 2<->, 3<*>, 4</>: ");
+	scanf_s("%d", &c);
+	if (c == 1)
 	{
-		C = (5.0 / 9.0) * (input2 - 32);
-		printf("입력하신화씨는 %.1f도이며 섭씨로는 %.1f도입니다.\n", input2, C);
+		printf("%.2f + %.2f = %.2f", a, b, a + b);
 	}
-	else if (input1 == 'C' || input1 == 'c')
+	else if (c == 2)
 	{
-		F = (9.0 / 5.0) * input2 + 32;
-		printf("입력하신섭씨는 %.1f도이며 화씨로는 %.1f도입니다.\n", input2, F);
+		printf("%.2f - %.2f = %.2f", a, b, a - b);
 	}
-	else
-		printf("잘못입력하셨습니다.\n");
-
+	else if (c == 3)
+	{
+		printf("%.2f * %.2f = %.2f", a, b, a * b);
+	}
+	else if (c == 4)
+	{
+		printf("%.2f / %.2f = %.2f", a, b, a / b);
+	}
 	return 0;
 }
